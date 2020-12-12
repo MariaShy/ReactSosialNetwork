@@ -4,14 +4,10 @@ import './MyPosts.module.css';
 import s from './MyPosts.module.css';
 
 const MyPosts = (props) => {
-    let postsData = [
-        {id: 1, likeCount: 12, message: 'Hi'},
-        {id: 2, likeCount: 0, message: 'How is life?'},
-        {id: 3, likeCount: 0, message: 'How is you?'}
-    ]
-    let posts = postsData.map(
+
+    let posts = props.postsData.map(
         p => <Post message={p.message} likeCount={p.likeCount}/>
-        )
+    )
 
     return (
     <div className={s.postsBlock}>
@@ -25,7 +21,7 @@ const MyPosts = (props) => {
             </div>
         </div>
         <div className={s.posts}>
-            { posts }
+            {posts}
         </div>
     </div>
 );
